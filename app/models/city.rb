@@ -6,11 +6,10 @@ class City < ApplicationRecord
       type: :Feature,
       geometry: {
         type: :Point,
-        coordinates: [latitude, longitude]
+        coordinates: [longitude, latitude]
       },
       properties: {
-        name: name,
-        popupContent: name
+        name: name
       }
     }
   end

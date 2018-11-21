@@ -16,13 +16,12 @@ class Sale < ApplicationRecord
           geometry: {
             type: :LineString,
             coordinates: [
-              [origin_city.latitude, origin_city.longitude],
-              [destination_city.latitude, destination_city.longitude]
+              [origin_city.longitude, origin_city.latitude],
+              [destination_city.longitude, destination_city.latitude]
             ]
           },
           properties: {
-            name: "#{origin_city.name} - #{destination_city.name}",
-            popupContent: "#{origin_city.name} - #{destination_city.name}"
+            name: "#{origin_city.name} - #{destination_city.name}"
           }
         }
       ]
