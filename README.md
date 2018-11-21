@@ -1,24 +1,40 @@
-# README
+# Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test backend service
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+You will need the following things properly installed on your computer.
 
-* System dependencies
+* [Ruby] (version: 2.5.3)
+* [Redis]
+* [Postgresql]
 
-* Configuration
+## Configuration
 
-* Database creation
+* `git clone <repository-url>` this repository
+* `cd Backend`
 
-* Database initialization
+Set your redis values (or uncomment for default) on `config/cable.yml`:
 
-* How to run the test suite
+* `url` (default: `redis://localhost:6379/1`)
 
-* Services (job queues, cache servers, search engines, etc.)
+Set your Postgresql values (or uncomment for default) on `config/database.yml`:
 
-* Deployment instructions
+* `host` (default: `localhost`)
+* `port` (default: `5432`)
+* `username`
+* `password`
 
-* ...
+## Installation
+
+* `bundle install`
+* `rails db:setup`
+
+## Running / Development
+
+Running server:
+* `rails s`
+
+Running random sales generator script (will run until stopped):
+* `rake sales:random`
